@@ -1,0 +1,16 @@
+.dropdown-item{
+    color: $color-content;
+
+    &:hover{
+        color: $color-primary;
+    }
+
+    &:focus{
+        color: #fff;
+    }
+}
+
+.dropdown-menu{
+    border-color: #efefef;
+    @extend .panel-shadow;
+}

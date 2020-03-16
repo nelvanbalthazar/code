@@ -1,0 +1,66 @@
+table.table{
+    tr{
+        th{
+            border: solid 1px #efefef;
+            color: $color-title;
+            font-weight: 700;
+            padding: 15px 20px;
+        }
+        td{
+            border: solid 1px #efefef;
+            padding: 15px 20px;
+
+            &.pelunasan,
+            &.successUpload{
+                @extend .alert;
+                @extend .alert-success;
+                @include border-radius(0);
+                padding: 15px 20px;
+                letter-spacing: 1px;
+            }
+
+            &.inspected{
+                @extend .alert;
+                @extend .alert-warning;
+                @include border-radius(0);
+                padding: 15px 20px;
+                letter-spacing: 1px;
+            }
+
+            &.transaction{
+                @extend .alert;
+                @extend .alert-danger;
+                @include border-radius(0);
+                padding: 15px 20px;
+                letter-spacing: 1px;
+            }
+
+            &.terjual{
+                @extend .alert;
+                @extend .alert-info;
+                @include border-radius(0);
+                padding: 15px 20px;
+                letter-spacing: 1px;
+            }
+        }
+    }
+}
+
+.pagintaion-row{
+    float: left;
+    width: 100px;
+    display: block;
+}
+
+.dropdown-menu.toggle-column{
+    width: 200px;
+    padding: 0;
+    left: -30px !important;
+    max-height: 500px;
+    overflow: auto;
+
+    .item-col{
+        padding: 15px;
+        border-bottom: solid 1px #efefef;
+    }
+}

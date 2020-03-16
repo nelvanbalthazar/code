@@ -1,0 +1,695 @@
+<!DOCTYPE HTML>
+<!--[if lte IE 9]><html class="no-js ie9 lower" lang="en"><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="de"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SOURCING MANAGEMENT</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>   
+    <!-- Start Wrapper -->
+    <div class="wrapper" id="app" data-page="input-mobile">
+
+        <!-- Start Side -->
+        <app-side></app-side>
+
+        <div class="main">
+
+            <!-- Start Header -->
+            <app-header></app-header>
+
+            <!-- Start Sub Header -->
+            <div class="sub-header">
+                <h5 class="text-uppercase mb-1">Registarsi Kendaraan</h5>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Registasi Kendaraan</li>
+                </ol>
+            </div>
+            <!-- End Sub Header -->
+
+            <!-- Start Content -->
+            <div class="content-form">
+                <div class="row">
+                    
+                    <div class="col-sm-12 col-lg-12 main-form">
+                        <div class="list-jadwal">
+                            <div class="row">
+                                <!--
+                                <div class="col">
+                                    <h6 class="title">
+                                        Judul Jadwal
+                                        <small class="text-info ml-2">Online</small>
+                                    </h6>
+                                    22 Juni 2018 - 10:00
+                                </div> -->
+                                <div class="col text-right">
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#input-dialog"><i data-feather="upload" class="icon mr-2"></i> Unggah</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clear-fix"></div>
+
+                        <!-- Start Wrap Form -->
+                        <div class="form-input">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#penitipan">LOKASI</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link"  data-toggle="tab" href="#itemstock">ITEM STOK</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#dokumenstock">STOK DOKUMEN</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <!-- Start Tab -->
+                                <div class="tab-pane fade show active" id="penitipan">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                        <label>Lokasi Lelang</label>
+                                                        <input type="text" class="form-control" value="JAKARTA" name="lokasi" id="lokasi"/>
+                                            </div>
+                                            <div class="card-body">
+                                                        <label>Lokasi Kendaraan</label>
+                                                        <select class="select-dropdown-no-search form-control" name="cabang" id="cabang">
+                                                            <option value="1">IBID Jakarta</option>
+                                                            <option value="2">IBID Bandung</option>
+                                                            <option value="3">IBID Surabaya</option>
+                                                            <option value="4">IBID Medan</option>
+                                                            <option value="5">IBID Kalimantan</option>
+                                                        </select>
+                                            </div>
+                                            <div class="card-body">
+                                                    <label>Kendaraan Butuh Di Pick Up ?</label>
+                                                    <select class="select-dropdown-no-search form-control" name="IsPickup" id="IsPickup">
+                                                        <option value="">-Pilih--</option>
+                                                        <option value="1">Ya</option>
+                                                        <option value="0">Tidak</option>
+                                                    </select>
+                                            </div>
+                                            
+                                            <!-- <div class="card-body">
+                                                <label class="check mb-0">
+                                                    <span data-toggle="tooltip" data-placement="top" title="Keterangan...">Need Expedition</span>
+                                                    <input type="checkbox" name="is_name" v-model="selectedNeedExpedition">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                                <label class="check mb-0 mt-3">
+                                                    <span data-toggle="tooltip" data-placement="top" title="Keterangan...">Cross Auction</span>
+                                                    <input type="checkbox" name="is_name" v-model="selectedCrossAuction">
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div> 
+                                            <div v-show="selectedNeedExpedition" class="card-body border-top">
+                                            -->
+                                            <div class="card-body" id="PickUp">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Tanggal Pick Up</label>
+                                                            <input type="text" value ="YYYY/MM/DD" class="form-control"  name="tanggalpickup" id="tanggalpickup"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Tipe Ekspedisi</label>
+                                                            <select class="select-dropdown-no-search form-control" name="tipeekspedisi" id="tipeekspedisi">
+                                                                <optgroup label="Mobil 4 Ban">
+                                                                    <option value="1">Mobil</option>
+                                                                    <option value="2">Derek</option>
+                                                                    <option value="3">Gendong</option>
+                                                                </optgroup>
+                                                                <optgroup label="Mobil 6 Ban">
+                                                                    <option value="4">Truk</option>
+                                                                    <option value="5">Derek</option>
+                                                                    <option value="6">Gendong</option>
+                                                                </optgroup>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--  <div v-show="selectedCrossAuction" class="card-body border-top"> -->
+                                            <div id="IsPickUpFalse">
+                                            <div class="card-body" id="IsAntar">
+                                                <label>Anda Akan Mengantar Kendaraan  ?</label>
+                                                    <select class="select-dropdown-no-search form-control" name="Antar" id="Antar">
+                                                        <option value="">-Pilih--</option>
+                                                        <option value="1">Ya</option>
+                                                        <option value="0">Tidak</option>
+                                                </select>
+                                            </div>
+                                            <div class="card-body" id="TglDatang">
+                                                    <label>Tanggal Kedatangan ke Pool ?</label>
+                                                    <input type="text" class="form-control" value="YYYY/MM/DD" name="TglDatang" >
+                                                </div>
+                                            <div class="card-body" id="Lintas">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Eksterior Depan</label>
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" id="customFile">
+                                                                <label class="custom-file-label" for="customFile">Choose file</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Eksterior Kanan</label>
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" id="customFile">
+                                                                <label class="custom-file-label" for="customFile">Choose file</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Eksterior Belakang</label>
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" id="customFile">
+                                                                <label class="custom-file-label" for="customFile">Choose file</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Eksterior Kiri</label>
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input"  name="eksteriorkiri" id="eksteriorkiri">
+                                                                <label class="custom-file-label" for="customFile">Choose file</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Interior Depan</label>
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" name="interiordepan "id="interiordepan">
+                                                                <label class="custom-file-label" for="customFile">Choose file</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Engine</label>
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" id="engine" name="engine">
+                                                                <label class="custom-file-label" for="customFile">Choose file</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Dokumen STNK</label>
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" id="dokumenSTNK" name="dokumenSTNK">
+                                                                <label class="custom-file-label" for="customFile">Choose file</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Dokumen BPKB</label>
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" id="dokumenBPKB" name="dokumenBPKB">
+                                                                <label class="custom-file-label" for="customFile">Choose file</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Dokumen Invoice</label>
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" id="dokumeninvoice" name="dokumeninvoice">
+                                                                <label class="custom-file-label" for="customFile">Choose file</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Dokumen KEUR</label>
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" id="dokumenKEUR" name="dokumenKEUR">
+                                                                <label class="custom-file-label" for="customFile">Choose file</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Dokumen FormA</label>
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" id="dokumenformA" name="dokumenformA">
+                                                                <label class="custom-file-label" for="customFile">Choose file</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                            <div class="card-footer">
+                                                    <div class="row">
+                                                        <div class="col text-right">
+                                                            <button class="btn btn-primary next">Next</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Tab -->
+                                <!-- Start Tab -->
+                                <div class="tab-pane fade" id="itemstock">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Nomor Polisi</label>
+                                                        <input type="text" class="form-control" name="nopolisi" id="nopolisi"/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Nomor Rangka</label>
+                                                        <input type="text" class="form-control" name="norangka" id="norangka"/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>STNK AN</label>
+                                                        <input type="text" class="form-control" name="stnkan" id="stnkan"/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Nomor Mesin</label>
+                                                        <input type="text" class="form-control" name="nomesin" id="nomesin"/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Alamat</label>
+                                                        <input type="text" class="form-control" name="alamat" id="alamat"/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Nomor BPKB</label>
+                                                        <input type="text" class="form-control" name="nobpkb" id="nobpkb"/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Kota</label>
+                                                        <input type="text" class="form-control" name="kota" id="kota"/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Nomor Faktur</label>
+                                                        <input type="text" class="form-control" name="nofaktur" id="nofaktur"/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Merek</label>
+                                                        <select class="select-dropdown-no-search form-control" name="merek" id="merek">
+                                                           <!-- Options handle by Javascript -->
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Nomor STNK</label>
+                                                        <input type="text" class="form-control" name="nostnk" id="nostnk"/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Seri</label>
+                                                        <select class="select-dropdown-no-search form-control" name="seri" id="seri">
+                                                                <!-- Options List handled by Javascript -->
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Silinder</label>
+                                                        <select class="select-dropdown-no-search form-control" name="silinder" id="silinder">
+                                                            <!-- Options List handled by Javascript -->
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Tipe</label>
+                                                        <select class="select-dropdown-no-search form-control" name="tipe" id="tipe">
+                                                                <!-- Options List handled by Javascript -->
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Sub Tipe</label>
+                                                        <select class="select-dropdown-no-search form-control" name="subtipe" id="subtipe">
+                                                             Options List handled by Javascript
+                                                        </select>
+                                                    </div>
+                                                </div> -->
+                                                
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>STNK S/D</label>
+                                                        <input type="text" class="form-control" placeholder="dd/mm/yyyy" name="stnksd" id="stnksd">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Model</label>
+                                                        <select class="select-dropdown-no-search form-control" name="model" id ="model">
+                                                           <!-- Options List handled by Javascript -->
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Plat Dasar</label>
+                                                        <select class="select-dropdown-no-search form-control" name="platdasar" id="platdasar">
+                                                            <!-- Options List handled by Javascript -->
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Penggerak</label>
+                                                        <input type="text" class="form-control" name="penggerak" id="penggerak">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Transmisi</label>
+                                                        <select class="select-dropdown-no-search form-control" name="transmisi" id="transmisi">
+                                                             <!-- Options List handled by Javascript -->
+                                                         </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Bahan Bakar</label>
+                                                        <select class="select-dropdown-no-search form-control" name="bahanbakar" id="bahanbakar">
+                                                             <!-- Options List handled by Javascript -->
+                                                         </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Tahun</label>
+                                                        <input type="text" class="form-control" name="tahun" id="tahun">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>KM</label>
+                                                        <input type="text" class="form-control" name="km" id="km">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Sumber</label>
+                                                        <input type="text" class="form-control" name="sumber" id="sumber">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Warna</label>
+                                                        <select class="select-dropdown-no-search form-control" name="warna" id="warna">
+                                                            <!-- Options List handled by Javascript -->
+                                                         </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Warna DOC</label>
+                                                        <input type="text" class="form-control" name="warnadoc" id="warnadoc">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Kunci Tambahan</label>
+                                                        <input type="text" class="form-control" name="kuncitambahan" id="kuncitambahan">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <button class="btn btn-primary previous">Previous</button>
+                                                </div>
+                                                <div class="col text-right">
+                                                    <button class="btn btn-primary next" >Next</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Tab -->
+
+                                <!-- Start Tab -->
+                                <div class="tab-pane fade" id="dokumenstock">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>BPKB</label>
+                                                        <select class="select-dropdown-no-search form-control" name="statusbpkb" id="statusbpkb">
+                                                            <option value="0">Tidak Ada</option>
+                                                            <option value="1">Ada</option> 
+                                                         </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Faktur</label>
+                                                        <select class="select-dropdown-no-search form-control" name="statusfaktur" id="statusfaktur">
+                                                            <option value="0">Tidak Ada</option>
+                                                            <option value="1">Ada</option> 
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Kwitansi</label>
+                                                        <select class="select-dropdown-no-search form-control" name="statuskwitansi" id="statuskwitansi">
+                                                            <option value="0">Tidak Ada</option>
+                                                            <option value="1">Ada</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Surat Pelepasan Hak</label>
+                                                        <select class="select-dropdown-no-search form-control" name="statussuratpelepasanhak" id="statussuratpelepasanhak">
+                                                            <option value="0">Tidak Ada</option>
+                                                            <option value="1">Ada</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Form A</label>
+                                                        <select class="select-dropdown-no-search form-control" name="statusformA" id="statusformA">
+                                                            <option value="0">Tidak Ada</option>
+                                                            <option value="1">Ada</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <button class="btn btn-primary previous">Previous</button>
+                                                </div>
+                                                <div class="col text-right">
+                                                    <button class="btn btn-primary">Submit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Tab -->
+                                
+                            </div>
+                        </div>
+                        <!-- End Wrap Form -->
+                    </div>
+                </div>
+            </div>
+            <!-- End Content -->
+
+            <div class="footer">
+                PT BALAI LELANG SERASI © 2018
+            </div>
+        </div>
+
+    </div>
+    <!-- End Wrapper -->
+
+    <!-- Start Modal -->
+    <div class="modal fade" id="input-dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="alert alert-info rounded-top mb-0">
+                    <p><i data-feather="info" class="icon-info float-right" data-toggle="tooltip" data-placement="top" title="Keterangan..."></i> Download file berikut untuk melihat semua file master data</p>
+                    <button class="btn btn-primary">Unggah</button>
+                </div>
+                <div class="alert alert-info rounded-0 mb-0">
+                    <p><i data-feather="info" class="icon-info float-right" data-toggle="tooltip" data-placement="top" title="Keterangan..."></i> Download file berikut untuk melihat semua file master data</i></p>
+                    <button class="btn btn-primary">Unggah</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Tanggal unggah transkasi</label>
+                        <input type="text" class="form-control" value="2018-05-08 19:19:50"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Nama Korporat</label>
+                        <input type="text" class="form-control" value="PT TRAKTOR NUSANTARA"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Cabang</label>
+                        <input type="text" class="form-control" value="IBID SURABAYA"/>
+                    </div>
+                    <div class="form-group mb-1">
+                        <label>Unggah berkas</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="customFile">
+                            <label class="custom-file-label" for="customFile">Choose file</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary">Unggah</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
+    <script src="./assets/js/jquery-3.3.1.js"></script>
+    <script src="./assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="./assets/js/jquery-3.3.1.min.js"></script>
+    <script src="./assets/js/vue.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.js"></script>
+    <script src="./assets/js/main.js"></script>
+
+<script type="text/javascript">
+          function bootstrapTabControl(){
+              var i, items = $('.nav-link'), pane = $('.tab-pane');
+              // Next
+              $('.next').on('click', function(){
+                  for(i = 0; i < items.length; i++){
+                      if($(items[i]).hasClass('active') == true){
+                          break;
+                      }
+                  }
+                  if(i < items.length - 1){
+                      // for tab
+                      $(items[i]).removeClass('active');
+                      $(items[i+1]).addClass('active');
+                      // for pane
+                      $(pane[i]).removeClass('show active');
+                      $(pane[i+1]).addClass('show active');
+                  }
+  
+              });
+              // Prev
+              $('.previous').on('click', function(){
+                  for(i = 0; i < items.length; i++){
+                      if($(items[i]).hasClass('active') == true){
+                          break;
+                      }
+                  }
+                  if(i != 0){
+                      // for tab
+                      $(items[i]).removeClass('active');
+                      $(items[i-1]).addClass('active');
+                      // for pane
+                      $(pane[i]).removeClass('show active');
+                      $(pane[i-1]).addClass('show active');
+                  }
+              });
+          }
+          bootstrapTabControl();
+</script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  
+</script>
+
+<script type="text/javascript">
+    if ($('#IsPickup').val()=="" )
+    {
+        $('#IsPickUpFalse').hide();
+        $('#PickUp').hide();
+    }
+    $("#IsPickup").change(function () {
+        if ($('#IsPickup').val()=="0")
+        {
+          $('#PickUp').fadeOut();
+          $('#IsPickUpFalse').fadeIn();
+        } else if ($('#IsPickup').val()=="1")
+        {
+          $('#PickUp').fadeIn()
+          $('#IsPickUpFalse').fadeOut();
+        } else {
+            $('#PickUp').fadeOut();
+            $('#IsPickUpFalse').fadeOut();
+        }
+    });
+
+    if ($('#Antar').val()=="" )
+    {
+        $('#Lintas').hide();
+        $('#TglDatang').hide();
+        
+    } 
+    $("#Antar").change(function () {
+        if ($('#Antar').val()=="0")
+        {
+          $('#TglDatang').fadeOut();
+          $('#Lintas').fadeIn();
+        } 
+        else if ($('#Antar').val()=="1" )
+        {
+          $('#TglDatang').fadeIn();
+          $('#Lintas').fadeOut();
+        } else {
+            $('#TglDatang').fadeOut();
+            $('#Lintas').fadeOut();
+        }
+    });
+</script>
+
+
+
+
+</body>
+</html>

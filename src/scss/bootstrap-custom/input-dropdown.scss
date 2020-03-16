@@ -1,0 +1,32 @@
+.select2-container--bootstrap .select2-selection{
+    height: 43px;
+    border: solid 1px #dfdfdf;
+}
+
+.select2-container--bootstrap .select2-selection--single .select2-selection__rendered{
+    margin-top: 6px;
+}
+
+.select2-container--bootstrap .select2-selection--single .select2-selection__arrow{
+    top: 1px;
+}
+
+.select2-container--bootstrap.select2-container--focus .select2-selection,
+.select2-container--bootstrap.select2-container--open .select2-selection{
+    border: solid 1px #dfdfdf;
+    box-shadow: none !important;
+}
+
+.select2-container--bootstrap .select2-dropdown{
+    border: solid 1px #dfdfdf;
+    @extend .panel-shadow;
+}
+
+.select2-container--bootstrap .select2-results__option--highlighted[aria-selected]{
+    background-color: $color-primary;
+}
+
+.select2-container--bootstrap .select2-results__option[aria-disabled=true]{
+    color: #999999;
+    background-color: #fafafa;
+}

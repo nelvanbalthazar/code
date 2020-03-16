@@ -1,0 +1,31 @@
+/*
+Color
+=========================== */
+$color-title: #4a4a4a;
+$color-content: #8a8a8a;
+$color-primary: #81be2a;
+$color-primary2: #87ad51;
+$color-secondary: #903f97;
+$color-secondary2: #733279;
+
+/*
+Bootstrap Custom
+=========================== */
+$body-color: $color-content;
+$theme-colors: (
+    "primary": $color-primary,
+);
+
+/*
+Font Family
+=========================== */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+$font-family: 'Roboto', sans-serif;
+
+
+/*
+Extended
+=========================== */
+.panel-shadow{
+    @include box-shadow(0, 1px, 10px, 1px, rgba(147, 147, 147, 0.10));
+}

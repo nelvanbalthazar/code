@@ -1,0 +1,13 @@
+.card{
+    background-color: #fff;
+    border-color: #efefef;
+    @extend .panel-shadow;
+
+    .card-body,
+    .card-header,
+    .card-footer{
+        background-color: transparent;
+        border-color: #efefef;
+        padding: 20px 25px;
+    }
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<!--[if lte IE 9]><html class="no-js ie9 lower" lang="en"><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="de"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>IBID PORTAL</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>   
+    <!-- Start Wrapper -->
+    <div class="wrapper" id="app" data-page="base-price">
+
+        <!-- Start Side -->
+        <app-side></app-side>
+
+        <div class="main">
+
+            <!-- Start Header -->
+            <app-header></app-header>
+
+            <!-- Start Sub Header -->
+            <div class="sub-header">
+                <h5 class="text-uppercase mb-1">Determine Basic Price</h5>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Determine Basic Price</li>
+                </ol>
+            </div>
+            <!-- End Sub Header -->
+
+            <!-- Start Content -->
+            <div class="content">
+                
+                <!-- Start Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-12 col-sm-6">
+                                <h6 class="mb-0 text-uppercase mt-2">Determine Basic Price</h6>
+                            </div>
+                            <div class="col-12 col-sm-6 text-right mt-sm-0 mt-3">
+                                <div class="dropdown keep-open">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+                                        Toggle Column
+                                    </button>
+                                    <div class="dropdown-menu toggle-column">
+                                        <div v-for="n in 10" class="item-col">
+                                            <label class="check mb-0">
+                                                lintas
+                                                <input type="checkbox" checked="checked" name="is_name">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body pb-2">
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="form-group mb-3">
+                                    <label>City</label>
+                                    <select class="select-dropdown form-control" name="state">
+                                        <option value="1">Jakarta</option>
+                                        <option value="2">Surabaya</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="form-group mb-3">
+                                    <label>Auction Type</label>
+                                    <select class="select-dropdown-no-search form-control" name="state">
+                                        <option value="1">Online</option>
+                                        <option value="1">Live</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="form-group mb-3">
+                                    <label>Auction Schedule</label>
+                                    <select class="select-dropdown form-control" name="state">
+                                        <option value="1">2018-08-31 - IBID Jakarta - Mobil - Online</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="card-body p-0 border-top" style="overflow-x:auto">
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width:50px">No</th>
+                                    <th scope="col">Police Number</th>
+                                    <th scope="col">Branch</th>
+                                    <th scope="col">Series</th>
+                                    <th scope="col">Cylinder</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Color</th>
+                                    <th scope="col" style="width:100px" class="text-center">Input</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(item, index) in arrBasePrice"> 
+                                    <th scope="row">{{ index + 1 }}</th>
+                                    <td>{{ item.nopol }}</td>
+                                    <td>{{ item.merek }}</td>
+                                    <td>{{ item.seri }}</td>
+                                    <td>{{ item.cilinder }}</td>
+                                    <td>{{ item.type }}</td>
+                                    <td>{{ item.warna }}</td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-primary btn-circle" data-toggle="modal" data-target="#input-dialog">
+                                            <i data-feather="edit-2" class="icon"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer pt-0 pb-0 pl-3">
+                        <div class="row">
+                            <div class="col pt-2 pb-2">
+                                <div class="d-flex flex-row">
+                                    <div class="p-2 pt-3">Tampilkan</div>
+                                    <div class="p-2">
+                                        <select class="select-dropdown-no-search pagintaion-row" name="state">
+                                            <option value="5">5 row</option>
+                                            <option value="10">10 row</option>
+                                            <option value="20">20 row</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col text-right">
+                                <nav class="pt-3 mb-0 d-inline-block">
+                                    <ul class="pagination">
+                                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Card -->
+            </div>
+            <!-- End Content -->
+
+            <div class="footer">
+                PT BALAI LELANG SERASI © 2018
+            </div>
+        </div>
+
+    </div>
+    <!-- End Wrapper -->
+    
+    <!-- Start Modal -->
+    <div class="modal fade" id="input-dialog">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header d-flex flex-row" style="margin-bottom:20px;">
+                    <h5 class="mb-0">Input Basic Price</h5>
+                </div>
+                <div class="d-flex flex-row">    
+                    <div class="col-md-6">
+                        <strong style="margin-bottom:5px;display: block;">Input harga</strong>
+                        <span class="modal-body">
+                            <input type="number" class="form-control" value="0"/>
+                        </span>
+                        <span class="modal-footer">
+                            <button class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button class="btn btn-primary">Send to AMS</button>
+                        </span>
+                    </div>
+                    <div class="col-md-6">      
+                        <strong style="margin-bottom: 30px;display: block;">Harga Rekomendasi</strong>
+                        <!-- <div id="container-chart-line" style="min-width: 100%; height:300px; margin: 0 auto"></div> -->
+                        <p>Harga Rekomendasi</p>
+                        <h6>Rp 170.000.000</h6>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
+
+    <script src="//code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
